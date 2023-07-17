@@ -1,0 +1,415 @@
+/* Set the body style  */
+
+
+/* Imported from blueprint.css plugins */
+
+.alt {
+  color: #666;
+  font-family: "Warnock Pro", "Goudy Old Style","Palatino","Book Antiqua", Georgia, serif;
+  font-style: italic;
+  font-weight: normal;
+}
+
+/* Added to allow the subtle increase in font size, but not spacing */
+.smalltext {
+	font-size:.8em;
+}
+.largetext {
+	font-size:1.2em;
+}
+
+/* Recx Colour */
+.recxbgcolour {
+	background: #333399;
+}
+.recxcolor {
+	color: #333399;
+}
+
+/* Container */
+.container {
+	border-color:#333333;
+  border-width:0px;
+  border-right-style:solid;
+  border-left-style:solid;
+	-moz-box-shadow: 0 0 40px rgba(0, 0, 0, .15);
+	-webkit-box-shadow: 0 0 5px rgba(0, 0, 0, .15);
+	-goog-ms-box-shadow: 0 0 10px #333333;
+	box-shadow: 0 0 40px rgba(0, 0, 0, .15);
+}
+
+.recxheading {
+	background-color: #333399;
+	-moz-border-radius: 30px;
+	border-radius: 30px;
+	margin: 0px;	
+	margin-bottom: 10px;	
+	color: #FFFFFF;
+	padding: 3px 10px 3px 20px;
+}
+
+/* Tagline */
+
+.tagline {
+	text-align: right;
+}
+
+/* Navigation Menu */
+
+.naviation {
+	float: left;
+	white-space: nowrap;
+}
+
+.navigation ul {
+	background-color: #333399;
+	-moz-border-radius: 10px;
+	border-radius: 10px;
+	margin: 0;
+}
+
+.navigation ul li {
+	list-style-type: none;
+	display: inline-block;
+	padding: 3px 10px 3px 10px;
+}
+
+.navigation ul li a {
+	font-weight: bold;
+	color: #FFFFFF;
+	text-decoration: none;
+}
+
+.navigation ul li a:hover {
+	text-decoration: underline;
+}
+
+#currentlink {
+	color: #EDD387;
+}
+
+
+/* Use blueprint to create the correct menu width, then adjust the left padding here to centre the items*/
+.navupper ul {
+	padding-left: 13px;;
+}
+
+.navlower ul {
+	padding-left: 10px;
+}
+
+/* Style the links within the main content div */
+.content a {
+	text-decoration: none;
+}
+
+.content a:hover {
+	text-decoration: underline;
+}
+
+/* Copyright Div */
+
+.copyright p {
+	text-align: right;
+}
+
+.copyright a {
+	color: #333333;
+	text-decoration: none;
+}
+
+.copyright a:hover {
+	color: #333399;
+	text-decoration: underline;
+}
+
+/* Home page product/service swapin title links */
+.servicefocus a {
+	color: #333333;
+	text-decoration: none;
+}
+
+.servicefocus a:hover {
+	color: #333399;
+	text-decoration: none;
+}
+
+.productfocus a {
+	color: #333333;
+	text-decoration: none;
+}
+
+.productfocus a:hover {
+	color: #333399;
+	text-decoration: none;
+}
+
+/* Home page advert logo/portal link */
+.advertimg {
+	width: 128px;
+	height: 128px;
+}
+
+.adverttext {
+	padding-top: 40px;
+}
+
+/* About page, bio pictures */
+
+/* adjust the padding around the bio images to give breathing room */
+.biopicture {
+	padding-left: 5px;
+	padding-bottom: 5px;
+	-moz-border-radius: 10px;
+	border-radius: 10px;
+}
+
+/* Contact page */
+
+.contactform {
+	display:	block;
+}
+
+.contactresponse {
+	display:	none;
+}
+
+.contactEmail img {
+	vertical-align: middle;
+}
+
+/* Research Page */
+
+.abstract {
+	font-size: 1.3em;
+}
+
+.amazon {
+	text-align: center;
+}
+
+.ebookbutton {
+	text-align: center;
+}
+
+input.ebookbutton {
+	width: 140px;
+	margin: 6px auto;
+	padding: 10px 20px;
+	font-size: 15px;
+	text-transform: uppercase;
+}
+
+.softwarebutton {
+	text-align: center;
+}
+
+input.softwarebutton {
+	width: 140px;
+	margin: 6px auto;
+	padding: 10px 20px;
+	font-size: 15px;
+	text-transform: uppercase;
+}
+
+.getaquotebutton {
+	text-align: center;
+}
+
+a.getaquote {
+	width: 140px;
+	margin: 6px auto;
+	padding: 10px 20px;
+	font-size: 15px;
+	text-transform: uppercase;
+}
+
+/* Breadcrumb bar */
+
+.breadcrumb a {
+	text-decoration: none
+}
+
+.breadcrumb a:hover {
+	text-decoration: underline;
+}
+
+/* Buy button */
+
+input.buy {
+	display: inline-block;
+	font-weight: bold;
+	color: white;
+	text-decoration: none;
+	border: solid 1px #333333;
+	-moz-border-radius: 10px;
+	-webkit-border-radius: 10px;
+	-o-border-radius: 10px;
+	-ms-border-radius: 10px;
+	-khtml-border-radius: 10px;
+	border-radius: 10px;
+	-moz-box-shadow: 0px 0px 5px #333333;
+	-webkit-box-shadow: 0px 0px 5px #333333;
+	-o-box-shadow: 0px 0px 5px #333333;
+	box-shadow: 0px 0px 5px #333333;
+	text-shadow: #333333 -1px -1px 0;
+	background-color: #5555ff;
+	background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #5555ff), color-stop(100%, #333399));
+	background-image: -webkit-linear-gradient(#5555ff, #333399);
+	background-image: -moz-linear-gradient(#5555ff, #333399);
+	background-image: -o-linear-gradient(#5555ff, #333399);
+	background-image: -ms-linear-gradient(#5555ff, #333399);
+	background-image: linear-gradient(#5555ff, #333399);
+}
+
+/* Quote button/link */
+
+a.getaquote {
+	display: inline-block;
+	font-weight: bold;
+	color: white;
+	text-decoration: none;
+	border: solid 1px #333333;
+	-moz-border-radius: 10px;
+	-webkit-border-radius: 10px;
+	-o-border-radius: 10px;
+	-ms-border-radius: 10px;
+	-khtml-border-radius: 10px;
+	border-radius: 10px;
+	-moz-box-shadow: 0px 0px 5px #333333;
+	-webkit-box-shadow: 0px 0px 5px #333333;
+	-o-box-shadow: 0px 0px 5px #333333;
+	box-shadow: 0px 0px 5px #333333;
+	text-shadow: #333333 -1px -1px 0;
+	background-color: #5555ff;
+	background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #5555ff), color-stop(100%, #333399));
+	background-image: -webkit-linear-gradient(#5555ff, #333399);
+	background-image: -moz-linear-gradient(#5555ff, #333399);
+	background-image: -o-linear-gradient(#5555ff, #333399);
+	background-image: -ms-linear-gradient(#5555ff, #333399);
+	background-image: linear-gradient(#5555ff, #333399);
+}
+
+.centerimg {
+	text-align: center;
+}
+
+/* Listed Products and Services */
+
+.fomLink {
+	text-align: left;
+}
+
+.pslisthead {
+	margin-bottom: 0em;
+}
+
+/* exeaudit page */
+
+.feature {
+	text-align: center;
+}
+
+.feature img {
+	/* width: 180px; */
+	-moz-box-shadow: 0px 0px 5px #333333;
+	-webkit-box-shadow: 0px 0px 5px #333333;
+	-o-box-shadow: 0px 0px 5px #333333;
+	box-shadow: 0px 0px 5px #333333;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	-o-border-radius: 5px;
+	-ms-border-radius: 5px;
+	-khtml-border-radius: 5px;
+	border-radius: 5px;
+}
+
+/* Banner text for the sales pages */
+.banner {
+	text-align: center;
+	font-size: 3em;
+	line-height: 1;
+	margin-bottom: 0.5em;
+}
+
+/* Product page quotes */
+.prodpagequote {
+	text-align: center;
+	font-size: 1.6em;
+	line-height: 1;
+	margin-bottom: 1em;
+}
+
+/* ApexSec box background */
+.paleblue {
+	background-color: #D6E4FF;
+}
+
+/* Product Boxes */
+
+.prodbox {
+	border-width: thin;
+	border-color: #9A9CA1;
+	border-style: solid;
+	padding: 15px;
+	-moz-border-radius: 10px;
+	border-radius: 10px;
+}
+
+.prodtitle {
+	font-weight: normal;
+	color: #111;
+	font-size: 2em;
+	margin-bottom: 0.75em;
+}
+
+.prodsubtitle {
+	font-weight: normal;
+	color: #111;
+	font-size: 1.5em;
+	margin-bottom: 1em;
+	line-height: 1;
+}
+
+.price {
+	font-weight: normal;
+	color: #111;
+	font-size: 1.2em;
+	line-height: 1.25;
+	margin-bottom:1.25em;
+}
+
+.prodbutton {
+	text-align: center;
+}
+
+.prodlowerleft {
+	text-align: center;
+}
+
+.prodlowerright {
+	text-align: center;
+}
+
+/* Parsley Form Validation */
+input.parsley-error, textarea.parsley-error {
+	color: #B94A48 !important;
+    background-color: #F2DEDE !important;
+    border: 1px solid #EED3D7 !important;
+}
+
+input.parsley-success, textarea.parsley-success {
+	color: #468847 !important;
+    background-color: #DFF0D8 !important;
+    border: 1px solid #D6E9C6 !important;
+}
+
+ul.parsley-error-list {
+	font-size: 11px;
+	margin: 2px;
+	list-style-type:none;
+}
+
+ul.parsley-error-list li {
+	line-height: 11px;
+}
