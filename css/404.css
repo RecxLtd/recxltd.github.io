@@ -2,6 +2,6 @@ html {
     color-scheme: light dark;
 }
 body {
-    width: 35em; margin: 0 auto;
+    max-width: 35em; margin: 0 auto; padding: 0 1em;
     font-family: Tahoma, Verdana, Arial, sans-serif;
 }
