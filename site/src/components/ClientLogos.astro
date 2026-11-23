@@ -1,0 +1,42 @@
+---
+import { getCollection } from 'astro:content';
+import { Image } from 'astro:assets';
+import type { ImageMetadata } from 'astro';
+
+const logos = import.meta.glob<{ default: ImageMetadata }>('../assets/clients/*.{svg,png}', { eager: true });
+const clients = (await getCollection('clients')).sort((a, b) => a.data.order - b.data.order);
+
+// Size each logo by visual area rather than height, so wide wordmarks and
+// compact marks look balanced next to each other.
+const AREA = 6400;
+const MAX_HEIGHT = 76;
+
+const items = clients.flatMap(({ id, data }) => {
+  const src = logos[`../assets/clients/${data.logo}`]?.default;
+  if (!src) return [];
+  const aspect = src.width / src.height;
+  let height = Math.sqrt((AREA * data.scale * data.scale) / aspect);
+  height = Math.min(height, MAX_HEIGHT);
+  const width = Math.round(height * aspect);
+  return [{ id, ...data, src, width, height: Math.round(height) }];
+});
+---
+<div class="clients">
+  <h3 class="clients-label">Organisations we have worked with</h3>
+  <ul class="client-logos">
+    {items.map((item) => (
+      <li>
+        <a href={item.url} target="_blank" rel="noopener noreferrer" title={item.name}>
+          <Image
+            src={item.src}
+            alt={item.name}
+            width={item.width}
+            height={item.height}
+            densities={item.src.format === 'svg' ? undefined : [1, 2]}
+            loading="lazy"
+          />
+        </a>
+      </li>
+    ))}
+  </ul>
+</div>

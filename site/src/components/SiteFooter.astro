@@ -1,0 +1,10 @@
+---
+import LogoMark from '../assets/brand/logo-mark.svg';
+import { site } from '../data/site';
+---
+<footer class="site-footer">
+  <a class="footer-brand" href="/" aria-label={`${site.legalName} home`}>
+    <LogoMark class="footer-logo" aria-hidden="true" focusable="false" />
+  </a>
+  <p>© {site.legalName}. All rights reserved.</p>
+</footer>

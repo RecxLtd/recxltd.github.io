@@ -1,0 +1,26 @@
+---
+import { Picture } from 'astro:assets';
+import type { ImageMetadata } from 'astro';
+
+interface Props {
+  id: string;
+  name: string;
+  linkedin: string;
+  bio: string;
+}
+const { id, name, linkedin, bio } = Astro.props;
+
+const photos = import.meta.glob<{ default: ImageMetadata }>('../assets/staff/*.png', { eager: true });
+const photo = photos[`../assets/staff/${id}.png`]?.default;
+---
+<article class="staff-card">
+  <header class="staff-head">
+    {photo && (
+      <a class="staff-photo" href={linkedin} target="_blank" rel="noopener noreferrer" title={`${name} on LinkedIn`}>
+        <Picture src={photo} formats={['avif', 'webp']} alt={`${name} on LinkedIn`} width={photo.width} height={photo.height} />
+      </a>
+    )}
+    <h3 class="staff-name">{name}</h3>
+  </header>
+  <p>{bio}</p>
+</article>

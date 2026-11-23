@@ -1,0 +1,57 @@
+# Organisations shown in the Services section. To add one, drop its logo
+# (SVG preferred, or PNG at 2x) into src/assets/clients/ and add an entry here.
+# `scale` optionally nudges a logo's visual size (1 = default).
+- id: oracle
+  order: 1
+  name: Oracle
+  url: https://www.oracle.com/
+  logo: oracle.svg
+  scale: 0.8
+
+- id: commvault
+  order: 2
+  name: Commvault
+  url: https://www.commvault.com/
+  logo: commvault.svg
+
+- id: trendminer
+  order: 3
+  name: TrendMiner
+  url: https://www.trendminer.com/
+  logo: trendminer.svg
+
+- id: oxford-nanopore
+  order: 4
+  name: Oxford Nanopore Technologies
+  url: https://nanoporetech.com/
+  logo: nanopore.svg
+
+- id: sargent-disc
+  order: 5
+  name: Sargent-Disc
+  url: https://www.sargent-disc.com/
+  logo: sargent.png
+
+- id: conde-nast
+  order: 6
+  name: Condé Nast
+  url: https://www.condenast.com/
+  logo: conde-nast.svg
+
+- id: cumulocity
+  order: 7
+  name: Cumulocity
+  url: https://www.cumulocity.com/
+  logo: cumulocity.svg
+
+- id: british-army
+  order: 8
+  name: British Army
+  url: https://www.army.mod.uk/
+  logo: army.png
+
+- id: nec-software-solutions
+  order: 9
+  name: NEC Software Solutions
+  url: https://www.necsws.com/
+  logo: nec-software-solutions.svg

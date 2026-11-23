@@ -1,0 +1,15 @@
+---
+import Base from '../layouts/Base.astro';
+import SiteHeader from '../components/SiteHeader.astro';
+import SiteFooter from '../components/SiteFooter.astro';
+---
+<Base title="Page not found | Recx" path="/404.html" noindex>
+  <script slot="head" src="/js/404script.js" is:inline></script>
+  <SiteHeader navBase="/" taglineAs="p" />
+  <main id="main" class="section not-found">
+    <h1 class="section-title">Page not found</h1>
+    <p class="lead">Sorry, the page you are looking for could not be found.</p>
+    <p class="lead">You will be taken to the <a href="/">Recx home page</a> in a few seconds.</p>
+  </main>
+  <SiteFooter />
+</Base>

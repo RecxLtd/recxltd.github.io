@@ -1,0 +1,49 @@
+- id: hmg-client
+  section: services
+  order: 1
+  quote: We have always found Recx consultants to be very professional, highly knowledgeable and technical experts.
+  source: HMG Client
+
+- id: healix
+  section: services
+  order: 2
+  quote: >-
+    Recx took the mystery out of penetration testing; they reviewed our sensitive assets and assisted us in
+    successfully delivering risk assessments and audits to our security-conscious clients.
+  source: Healix International Limited
+
+- id: oracle
+  section: apexsec
+  order: 1
+  quote: >-
+    We would like to recognise and thank Recx Ltd. for the use of their ApexSec analysis engine, which has
+    been used to improve the security of Oracle Application Express...
+  source: Oracle
+
+- id: british-army
+  section: apexsec
+  order: 2
+  quote: ApexSec has already paid for itself!
+  source: Lead developer, British Army
+
+- id: apex-freelancer
+  section: apexsec
+  order: 3
+  quote: >-
+    Recx is in another league when it comes to APEX security, what I learned blew my mind, ecstatic to be
+    partnering with them!
+  source: APEX Freelancer
+
+- id: network-vendor
+  section: team
+  order: 1
+  quote: Thanks a lot for the report, it gave us all the information needed to challenge our R&D.
+  source: Network technology vendor
+
+- id: mobile-app-developer
+  section: about
+  order: 1
+  quote: >-
+    We really enjoyed working with Recx on the mobile music project, the feedback was clear and concise and
+    easy to follow.
+  source: Mobile app developer

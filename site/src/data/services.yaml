@@ -1,0 +1,45 @@
+- id: vulnerability-research
+  order: 1
+  title: Vulnerability Research
+  paragraphs:
+    - >-
+      Software and hardware often present an unknown risk within an organisation. Often products are
+      mandated or can't be removed and as such understanding the potential exposure they present is key
+      to structuring defensive controls. Recx have strong experience inspecting products, reverse
+      engineering, looking for vulnerabilities and where they're found looking to determine their potential.
+    - >-
+      If you have products in your organisation which present an unknown risk, we can perform detailed
+      analysis and act as liaison with the vendor to establish an accurate risk picture and an effective
+      defensive stance.
+
+- id: product-evaluations
+  order: 2
+  title: Product Evaluations
+  paragraphs:
+    - >-
+      Selecting security products is a minefield. Every company claims that theirs is the best product and
+      the perfect fit for your security and business needs. However our experience has shown that
+      independent evaluation during the buying cycle can cut through marketing claims and ensure new
+      security solutions don't contribute to your security problems by introducing unknown risks.
+    - >-
+      Recx have extensive experience of reviewing security products as part of a due-diligence process.
+      Verifying claims, mapping attack surfaces and intensively inspecting and instrumenting software
+      products. We work within your evaluation window, providing you with detailed analysis. Our service is
+      designed to provide you with the information with which to make the most informed choice about how
+      best to protect your business assets.
+
+- id: security-assessments
+  order: 3
+  title: Security Assessments
+  paragraphs:
+    - >-
+      Recx has considerable experience in performing application security assessments, at all stages of the
+      development life cycle and using all major technologies and languages from C applications in embedded
+      real time systems through to enterprise Java running in the cloud.
+    - >-
+      We've moved away from doing traditional black-box security assessments, believing them to be
+      inefficient, ineffective and not representative of actual attacker capability. In order for Recx to
+      offer the most value to our clients, while ensuring efficient and accurate results delivery, we've
+      found working closely with both the application source code and the developers gives the greatest
+      customer return. We can work within both waterfall and agile development models and if desired submit
+      any security issues directly into a bug tracking system.

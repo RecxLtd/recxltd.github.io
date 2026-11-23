@@ -1,0 +1,126 @@
+---
+import { getCollection } from 'astro:content';
+import { Picture } from 'astro:assets';
+import Base from '../layouts/Base.astro';
+import SiteHeader from '../components/SiteHeader.astro';
+import SiteFooter from '../components/SiteFooter.astro';
+import Section from '../components/Section.astro';
+import Testimonials from '../components/Testimonials.astro';
+import StaffCard from '../components/StaffCard.astro';
+import Contact from '../components/Contact.astro';
+import ClientLogos from '../components/ClientLogos.astro';
+import Icon from '../components/Icon.astro';
+import apexsecShot from '../assets/apexsec.png';
+import { site } from '../data/site';
+
+const services = (await getCollection('services')).sort((a, b) => a.data.order - b.data.order);
+const staff = (await getCollection('staff')).sort((a, b) => a.data.order - b.data.order);
+
+const pedigree = [
+  { name: 'DERA', url: 'https://en.wikipedia.org/wiki/Defence_Evaluation_and_Research_Agency' },
+  { name: 'QinetiQ', url: 'https://www.qinetiq.com/' },
+  { name: 'DSTL', url: 'https://www.gov.uk/government/organisations/defence-science-and-technology-laboratory' },
+  { name: '@stake', url: 'https://en.wikipedia.org/wiki/@stake' },
+  { name: 'Symantec', url: 'https://www.broadcom.com/products/cybersecurity' },
+  { name: 'Logica', url: 'https://www.cgi.com/' },
+];
+const separator = (i: number) => (i < pedigree.length - 2 ? ', ' : i === pedigree.length - 2 ? ' and ' : '');
+---
+<Base>
+  <SiteHeader />
+
+  <main id="main">
+    <Section id="services" title="Cyber Security Services">
+      <p class="lead">
+        Recx offers a range of both bespoke and structured services, some of which are detailed below. We work
+        closely with our customers to understand their needs and project requirements before creating a custom
+        package of work. These can be half day briefings through to multi-month research engagements. Let us
+        help you get the most out of your people and technology.
+      </p>
+      <div class="services-grid">
+        {services.map(({ data }) => (
+          <article class="service-card">
+            <h3>{data.title}</h3>
+            {data.paragraphs.map((text) => <p>{text}</p>)}
+          </article>
+        ))}
+      </div>
+      <ClientLogos />
+      <Testimonials section="services" />
+    </Section>
+
+    <Section id="apexsec" title="ApexSec – Oracle APEX Security">
+      <div class="apexsec-grid">
+        <div class="apexsec-text">
+          <p class="lead">
+            Our ApexSec Desktop product secures your APEX applications by scanning the source code looking for
+            vulnerabilities. It is ideally used during the development life cycle and during QA testing.
+          </p>
+          <p class="lead">
+            ApexSec can help you quickly identify weaknesses in your applications without the specific knowledge
+            of a security expert. We're proud to say that ApexSec is today used by Oracle as well as both
+            commercial and Government customers as part of their application security process.
+          </p>
+          <p>
+            <a class="button" href={site.apexsecUrl} target="_blank" rel="noopener noreferrer">
+              More information about ApexSec <Icon name="arrow" />
+            </a>
+          </p>
+        </div>
+        <a class="apexsec-shot" href={site.apexsecUrl} target="_blank" rel="noopener noreferrer" tabindex="-1" aria-hidden="true">
+          <Picture
+            src={apexsecShot}
+            formats={['avif', 'webp']}
+            alt=""
+            widths={[480, 720, 960, 1440]}
+            sizes="(min-width: 821px) 480px, calc(100vw - 4rem)"
+            loading="lazy"
+          />
+        </a>
+      </div>
+      <Testimonials section="apexsec" />
+    </Section>
+
+    <Section id="about" title="About Recx">
+      <p class="lead">
+        Over several years the concept of a small, agile, British security company had been conceived between
+        the founders but it wasn't until late 2009 that Recx was finally born. Created to provide our combined
+        experience in the fields of system and network defence, attack, exploitation and application security
+        research to both public and private organisations.
+      </p>
+      <p class="lead">
+        Our blend of skills comes from real world experience of compromising and defending the technologies and
+        networks developed and utilised by central Government, the military, law enforcement, financial services,
+        telecommunications and software companies. Recx is perfectly placed to provide valuable capability,
+        insight, intelligence and creativity to the challenges faced by twenty-first century computing security.
+      </p>
+      <div class="staff-grid">
+        {staff.map(({ id, data }) => (
+          <StaffCard id={id} name={data.name} linkedin={data.linkedin} bio={data.bio} />
+        ))}
+      </div>
+      <Testimonials section="team" />
+      <p class="lead">
+        In addition to the experience gained from attacking and defending technologies, Recx also has a strong
+        pedigree in applied security research. This pedigree comes from individuals who have worked for
+        organisations such as{' '}
+        {pedigree.map((org, i) => <><a href={org.url} target="_blank" rel="noopener noreferrer">{org.name}</a>{separator(i)}</>)},
+        performing research into both offensive and defensive technologies and techniques.
+      </p>
+      <p class="lead">
+        Working for their respective commercial or Government organisations and consulting into hundreds of
+        others, the members of Recx have created and researched an extensive range of tools and techniques that
+        assist in the defence and exploitation of computer systems and networks. Some of these are held privately
+        and used to help our customers get the best out of their environments, others are offered as both free
+        and commercial products.
+      </p>
+      <Testimonials section="about" />
+    </Section>
+
+    <Section id="contact" title="Contact Recx">
+      <Contact />
+    </Section>
+  </main>
+
+  <SiteFooter />
+</Base>
