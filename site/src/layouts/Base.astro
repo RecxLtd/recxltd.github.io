@@ -1,0 +1,82 @@
+---
+import '../styles/global.css';
+import { csp, site } from '../data/site';
+
+interface Props {
+  title?: string;
+  description?: string;
+  path?: string;
+  noindex?: boolean;
+}
+
+const {
+  title = site.title,
+  description = site.description,
+  path = '/',
+  noindex = false,
+} = Astro.props;
+
+const canonical = new URL(path, site.url).href;
+const ogImage = new URL('/images/og.png', site.url).href;
+
+
+const organisation = {
+  '@context': 'https://schema.org',
+  '@type': 'Organization',
+  name: site.legalName,
+  alternateName: site.name,
+  url: site.url,
+  logo: new URL('/images/logo.png', site.url).href,
+  description: site.description,
+  foundingDate: site.foundingDate,
+  identifier: { '@type': 'PropertyValue', propertyID: 'Companies House', value: site.companyNumber },
+  vatID: site.vatNumber,
+  address: {
+    '@type': 'PostalAddress',
+    streetAddress: site.address.street,
+    addressLocality: site.address.locality,
+    addressRegion: site.address.region,
+    postalCode: site.address.postcode,
+    addressCountry: site.address.country,
+  },
+  sameAs: [site.social.linkedin.url, site.companiesHouseUrl],
+};
+---
+<!doctype html>
+<html lang="en-GB">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta http-equiv="Content-Security-Policy" content={csp} />
+    <meta name="referrer" content="no-referrer" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <meta name="robots" content={noindex ? 'noindex' : 'index, follow'} />
+    <link rel="canonical" href={canonical} />
+    <meta name="theme-color" content="#333399" />
+
+    <link rel="icon" href="/favicon.ico" sizes="any" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content={site.name} />
+    <meta property="og:locale" content="en_GB" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:image" content={ogImage} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Recx logo with the tagline Bespoke cyber security solutions" />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    {!noindex && <script type="application/ld+json" is:inline set:html={JSON.stringify(organisation)} />}
+    <slot name="head" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <div class="page">
+      <slot />
+    </div>
+  </body>
+</html>

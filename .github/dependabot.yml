@@ -1,0 +1,26 @@
+# Weekly dependency updates. The cooldown means a release must be at least
+# 14 days old before an update is proposed (security fixes are not delayed).
+version: 2
+updates:
+  - package-ecosystem: npm
+    directory: /site
+    schedule:
+      interval: weekly
+    cooldown:
+      default-days: 14
+    groups:
+      astro:
+        patterns: ["astro", "@astrojs/*"]
+      tooling:
+        patterns: ["*"]
+        exclude-patterns: ["astro", "@astrojs/*"]
+
+  - package-ecosystem: github-actions
+    directory: /
+    schedule:
+      interval: weekly
+    cooldown:
+      default-days: 14
+    groups:
+      actions:
+        patterns: ["*"]

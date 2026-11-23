@@ -1,0 +1,23 @@
+---
+import { getCollection } from 'astro:content';
+
+interface Props {
+  section: 'services' | 'apexsec' | 'team' | 'about';
+}
+const { section } = Astro.props;
+const items = (await getCollection('testimonials', ({ data }) => data.section === section)).sort(
+  (a, b) => a.data.order - b.data.order,
+);
+---
+{items.length > 0 && (
+  <div class:list={['quotes', `quotes-${Math.min(items.length, 3)}`]}>
+    {items.map(({ data }) => (
+      <figure class="quote">
+        <blockquote>
+          <p>{data.quote}</p>
+        </blockquote>
+        <figcaption>{data.source}</figcaption>
+      </figure>
+    ))}
+  </div>
+)}

@@ -1,0 +1,30 @@
+- id: james
+  order: 1
+  name: James
+  linkedin: https://www.linkedin.com/in/james-vaughan-85095437/
+  bio: >-
+    James is one of the founders of Recx and has been working in the field of computer security since being
+    recruited in 2000, by DERA, an agency of the Ministry of Defence. Since then, James has combined cutting
+    edge defensive and offensive security research with delivery of security consulting for leading private
+    and public sector clients.
+
+- id: nathan
+  order: 2
+  name: Nathan
+  linkedin: https://www.linkedin.com/in/nathan-catlow-88996a27/
+  bio: >-
+    Nathan has worked exclusively within the computer security arena for over 25 years in various technical
+    roles within both Government and UK commercial organisations. Prior to this Nathan was a developer
+    involved with the production of commercial grade applications. He has performed incident response,
+    computer forensics and countless penetration tests for a wide range of top UK and US businesses.
+
+- id: tim
+  order: 3
+  name: Tim
+  linkedin: https://www.linkedin.com/in/tim-austwick-19830537/
+  bio: >-
+    After graduating from Edinburgh University in 2000, Tim conducted advanced research in tandem with DERA's
+    penetration testing team. By monitoring the developments of the growing computer security community,
+    while validating and advancing research he enhanced the wider team capability through education and
+    development of attack tools and techniques. Subsequently Tim has worked in research and consulting roles
+    for QinetiQ, DSTL, Logica and SureCloud.

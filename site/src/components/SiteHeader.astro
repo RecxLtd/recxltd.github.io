@@ -1,0 +1,28 @@
+---
+import LogoMark from '../assets/brand/logo-mark.svg';
+import { site, nav } from '../data/site';
+
+interface Props {
+  /** Prefix for the in-page navigation links ('' on the home page, '/' elsewhere) */
+  navBase?: '' | '/';
+  /** The tagline is the page heading on the home page */
+  taglineAs?: 'h1' | 'p';
+}
+const { navBase = '', taglineAs = 'h1' } = Astro.props;
+const Tagline = taglineAs;
+---
+<header class="site-header">
+  <a class="brand" href="/" aria-label={`${site.legalName} home`}>
+    <LogoMark class="brand-logo" aria-hidden="true" focusable="false" />
+  </a>
+  <div class="header-main">
+    <Tagline class="tagline">{site.tagline}</Tagline>
+    <nav class="site-nav" aria-label="Main">
+      <ul>
+        {nav.map((item) => (
+          <li><a href={`${navBase}${item.href}`}>{item.label}</a></li>
+        ))}
+      </ul>
+    </nav>
+  </div>
+</header>

@@ -1,0 +1,50 @@
+---
+import { Image } from 'astro:assets';
+import contactEmail from '../assets/contact-email.png';
+import EmailIcon from '../assets/icons/email.svg';
+import linkedinBug from '../assets/icons/linkedin-in-bug.png';
+import { site } from '../data/site';
+---
+<div class="contact-grid">
+  <div class="contact-col">
+    <h3 class="contact-label">Get in touch</h3>
+    <ul class="contact-list">
+      <li>
+        <EmailIcon class="contact-icon" aria-hidden="true" focusable="false" />
+        <Image
+          class="contact-email"
+          src={contactEmail}
+          alt="Contact email address for Recx"
+          width={Math.round(contactEmail.width / 2)}
+          height={Math.round(contactEmail.height / 2)}
+          densities={[1, 2]}
+          format="png"
+        />
+      </li>
+      <li>
+        <a class="contact-social" href={site.social.linkedin.url} target="_blank" rel="noopener noreferrer">
+          <Image class="contact-linkedin" src={linkedinBug} alt="" height={40} densities={[1, 2]} format="png" />
+          <span class="contact-social-text">Follow Recx on LinkedIn</span>
+        </a>
+      </li>
+    </ul>
+  </div>
+  <div class="contact-col">
+    <h3 class="contact-label">Company</h3>
+    <p>
+      {site.legalName} is a private limited company registered in England and Wales, company number{' '}
+      <a class="quiet-link" href={site.companiesHouseUrl} target="_blank" rel="noopener noreferrer" title="View on Companies House">{site.companyNumber}</a>.
+    </p>
+    <p>VAT registration number: {site.vatNumber}.</p>
+  </div>
+  <div class="contact-col">
+    <h3 class="contact-label">Registered office</h3>
+    <address>
+      {site.legalName}<br />
+      {site.address.street}<br />
+      {site.address.locality}<br />
+      {site.address.region}<br />
+      {site.address.postcode}
+    </address>
+  </div>
+</div>
