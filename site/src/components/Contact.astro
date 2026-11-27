@@ -4,6 +4,10 @@ import contactEmail from '../assets/contact-email.png';
 import EmailIcon from '../assets/icons/email.svg';
 import linkedinBug from '../assets/icons/linkedin-in-bug.png';
 import { site } from '../data/site';
+
+// Joined without whitespace so no line of the address starts with a space
+const { street, locality, region, postcode } = site.address;
+const addressLines = [site.legalName, street, locality, region, postcode];
 ---
 <div class="contact-grid">
   <div class="contact-col">
@@ -36,12 +40,6 @@ import { site } from '../data/site';
   </div>
   <div class="contact-col">
     <h3 class="contact-label">Registered office</h3>
-    <address>
-      {site.legalName}<br />
-      {site.address.street}<br />
-      {site.address.locality}<br />
-      {site.address.region}<br />
-      {site.address.postcode}
-    </address>
+    <address>{addressLines.map((line, i) => <Fragment>{i > 0 && <br />}{line}</Fragment>)}</address>
   </div>
 </div>
