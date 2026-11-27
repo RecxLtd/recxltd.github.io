@@ -31,10 +31,7 @@ import { site } from '../data/site';
   </div>
   <div class="contact-col">
     <h3 class="contact-label">Company</h3>
-    <p>
-      {site.legalName} is a private limited company registered in England and Wales, company number{' '}
-      <a class="quiet-link" href={site.companiesHouseUrl} target="_blank" rel="noopener noreferrer" title="View on Companies House">{site.companyNumber}</a>.
-    </p>
+    <p><a class="quiet-link" href={site.companiesHouseUrl} target="_blank" rel="noopener noreferrer" title="View on Companies House">{site.legalName}</a> is a private limited company registered in England and Wales, company number {site.companyNumber}.</p>
     <p>VAT registration number: {site.vatNumber}.</p>
   </div>
   <div class="contact-col">
